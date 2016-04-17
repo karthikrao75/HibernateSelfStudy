@@ -1,4 +1,4 @@
-package com.karthik.SecondHibernateDemo.TesterPackage;
+package com.karthik.EmbeddedHibernateDemo.TesterPackage;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,8 +8,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.karthik.SecondHibernateDemo.HibernateEntity.Address;
-import com.karthik.SecondHibernateDemo.HibernateEntity.Userdetails;
+import com.karthik.EmbeddedHibernateDemo.HibernateEntity.Address;
+import com.karthik.EmbeddedHibernateDemo.HibernateEntity.Userdetails;
 
 public class Tester {
 

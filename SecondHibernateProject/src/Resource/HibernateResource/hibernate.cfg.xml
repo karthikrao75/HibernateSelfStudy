@@ -35,7 +35,7 @@
         <property name="hbm2ddl.auto">create</property>
 
         <!-- Names the annotated entity class -->
-        <mapping class="com.karthik.SecondHibernateDemo.HibernateEntity.Userdetails"/>
+        <mapping class="com.karthik.EmbeddedHibernateDemo.HibernateEntity.Userdetails"/>
 
     </session-factory>
 

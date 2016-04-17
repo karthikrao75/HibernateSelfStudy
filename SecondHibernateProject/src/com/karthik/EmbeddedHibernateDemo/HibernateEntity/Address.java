@@ -1,4 +1,4 @@
-package com.karthik.SecondHibernateDemo.HibernateEntity;
+package com.karthik.EmbeddedHibernateDemo.HibernateEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
