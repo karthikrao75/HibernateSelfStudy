@@ -2,3 +2,30 @@
 if it is kept create-drop -it will create a table and drop the same when session is closed.
 if it is kept update -it will check if the table is present if not then it will create one and then update it.
 if it is kept create -it will drop table and then create that table .this will be done every time.
+
+		Userdetails userdetails=new Userdetails();
+		userdetails.setUserId(1);
+		userdetails.setUserName("karthik");
+		Configuration cfg=new Configuration().configure("/Resource/HibernateResource/hibernate.cfg.xml");
+		SessionFactory factory=cfg.buildSessionFactory();
+		//transient state
+		Session s=factory.openSession();
+		s.getTransaction();
+		s.save(userdetails);
+		
+		//persistence
+		//userdetails.setUserName("srikanth");
+		//this will update username with the new value and persist it to database.
+		//because after session is created object changes from transient to persistence state
+		//in persistence state if object is modified then it reflect in database  
+		s.beginTransaction().commit();
+		userdetails.setUserName("babishan");
+		//after commit it will be in persistence state it self so any changes done to object will get reflected once u commit it.
+		s.beginTransaction().commit();
+		s.close();
+		userdetails.setUserName("bandar");
+		//will not get reflected since it is in detached state
+		System.out.println("operation completed");
+		
+		
+		//annotations can also be applied on getter method instead of instance variable.
