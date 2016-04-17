@@ -1,6 +1,5 @@
 package com.karthik.EmbeddedHibernateDemo.HibernateEntity;
 
-import java.beans.Transient;
 import java.util.Date;
 
 import javax.persistence.Column;
