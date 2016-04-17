@@ -1,0 +1,4 @@
+# if hbm2ddl.auto is kept Validate -it will check for table in database, if it is not able to find one then it will throw org.hibernate.tool.schema.spi.SchemaManagementException .
+if it is kept create-drop -it will create a table and drop the same when session is closed.
+if it is kept update -it will check if the table is present if not then it will create one and then update it.
+if it is kept create -it will drop table and then create that table .this will be done every time.
