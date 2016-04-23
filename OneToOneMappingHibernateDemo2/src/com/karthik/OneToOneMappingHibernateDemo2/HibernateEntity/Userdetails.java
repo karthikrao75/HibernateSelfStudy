@@ -15,7 +15,6 @@ import javax.persistence.Table;
 @Entity
 // (name="U_DETAILS")
 @Table(name = "User_DETAILS")
-// if both have name then @table is given preference.
 public class Userdetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,7 +23,6 @@ public class Userdetails {
 	@Column(name = "USER_NAME")
 	private String userName;
 	@OneToOne(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
-	//@joincolumn will rename the foreign key column name
 	@JoinColumn(name="VEHICLE_ID")
 	private Vehicle vehicle;
 

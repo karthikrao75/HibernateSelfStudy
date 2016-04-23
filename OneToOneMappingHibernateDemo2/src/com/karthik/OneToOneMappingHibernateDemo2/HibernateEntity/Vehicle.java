@@ -14,6 +14,11 @@ public class Vehicle {
 	private int vehicleId;
 	private String vehiclename;
 	@OneToOne(cascade = CascadeType.ALL,mappedBy="vehicle")
+	//mapped by tells who owns the relation ship
+	/*In this case userdetails will own the relationship
+	 * hence foreign key column will be added in userdetails table
+	 * */
+	 
 	@JoinColumn(name="User_Id")
 	private Userdetails userdetails;
 
