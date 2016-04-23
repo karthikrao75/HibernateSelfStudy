@@ -11,7 +11,10 @@ import org.hibernate.annotations.Parameter;
 @Entity
 public class Vehicle {
 	@Id
-	@GenericGenerator(name="gen",strategy="increment",parameters=@Parameter(name="property",value="userdetails"))
+	//@generic generator will help in using same key that was generated for mapped class
+	//if we use this then we will have to set both class object
+	//in both the class before using save() on one of the class check tester class for more information.
+	@GenericGenerator(name="gen",strategy="foreign",parameters=@Parameter(name="property",value="userdetails"))
 	@GeneratedValue(generator="gen")
 	private int vehicleId;
 	private String vehiclename;
