@@ -1,0 +1,29 @@
+@Inheritatace is not mandatory
+if @Inheritance is not used it will use single table strategy to create a table  
+
+Hibernate: insert into Vehicle (vehiclename, DTYPE, vehicleId) values (?, 'Vehicle', ?)
+Hibernate: insert into Vehicle (vehiclename, steeringhandle, DTYPE, vehicleId) values (?, ?, 'TwoWheeler', ?)
+Hibernate: insert into Vehicle (vehiclename, steeringWheel, DTYPE, vehicleId) values (?, ?, 'FourWheeler', ?)
+
+where DTYPE is a discriminator Type which helps in identifying the type of object or class that the row contains
+
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+here strategy tells how the table has to be created , InheritanceType is an enumeration used  to get type of 
+inheritance table .
+
+@DiscriminatorColumn(name="VEHICLE_TYPE",
+discriminatorType=DiscriminatorType.STRING)
+//by default discriminator type will be string
+ this tag is used in parent class 
+ name attribute will change the column name from DTYPE to user specified Name 
+ discriminatorType will tell which type of value it must store -Integer,Char or String.
+ 
+ DTYPE of child class will have default value as class name
+ in case we want to change the value then use
+ @DiscriminatorValue(value="TWO_VEHICLE")
+ 
+ so finally table will be
+ 
+ Hibernate: insert into Vehicle (vehiclename, VEHICLE_TYPE, vehicleId) values (?, 'Vehicle', ?)
+Hibernate: insert into Vehicle (vehiclename, steeringhandle, VEHICLE_TYPE, vehicleId) values (?, ?, 'TWO_VEHICLE', ?)
+Hibernate: insert into Vehicle (vehiclename, steeringWheel, VEHICLE_TYPE, vehicleId) values (?, ?, 'FOUR_VEHICLE', ?)
