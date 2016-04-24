@@ -38,7 +38,15 @@ public class Tester {
 		Userdetails user=(Userdetails)q.uniqueResult();
 		System.out.println(user);
 		//Userdetails [userId=1, userName=karthik]
+		q.setFirstResult(5);
+		//will fetch the result after first 4 row that is from 5th row.
+		q.setMaxResults(4);
+		//will fetch maximum of four result
+		//in this case it will start from 5th and fetch total 4 result by this we can use
+		//pagination.
 		
+		// String sql="Select new map(userId,userName) from userdetails"
+		//well return map list
 		Query q1=s.createQuery("Update Userdetails u set u.userName =:name where u.userId =:user");
 		q1.setParameter("name", "kallappa");
 		q1.setParameter("user", 2);
