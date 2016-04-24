@@ -22,10 +22,6 @@ public class Userdetails {
 	@Column(name = "USER_NAME")
 	private String userName;
 	@OneToMany(mappedBy="userdetails")
-	//in this new table with primary key of both the table will be created
-	//@joinTable name attribute will give it a new table name
-	//joincolumn will rename primary column name key of this class to new name
-	//inverseJoinColumns will rename pk of other mapped table
 
 	private Collection<Vehicle> vehicle = new ArrayList<>();
 
