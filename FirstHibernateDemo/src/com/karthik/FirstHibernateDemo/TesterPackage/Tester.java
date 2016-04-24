@@ -16,6 +16,7 @@ public class Tester {
 		Userdetails userdetails=new Userdetails();
 		
 		userdetails.setUserName("karthik");
+		//object is in transient state
 		Configuration cfg;
 		SessionFactory factory;
 		Session s=null;
@@ -29,6 +30,7 @@ public class Tester {
 		s=factory.openSession();
 		s.getTransaction();
 		s.save(userdetails);
+		//persistence state
 		s.beginTransaction().commit();
 		System.out.println("operation completed");
 		}
@@ -38,6 +40,7 @@ public class Tester {
 		finally {
 			if(s!=null){
 				s.close();
+				//detached state
 			}
 			
 		}
