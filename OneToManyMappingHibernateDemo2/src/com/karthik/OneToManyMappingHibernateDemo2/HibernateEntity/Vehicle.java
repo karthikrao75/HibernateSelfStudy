@@ -13,7 +13,7 @@ public class Vehicle {
 	@GeneratedValue
 	private int vehicleId;
 	private String vehiclename;
-	//bi-directional where vehicale is owner
+	//bi-directional where vehicle is owner
 	//since mappedby is used no new table is created 
 	//instead a foreign key column is added in vehicle table
 	@ManyToOne(cascade=CascadeType.ALL)
