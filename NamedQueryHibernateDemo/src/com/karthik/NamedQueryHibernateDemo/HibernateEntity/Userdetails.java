@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -19,6 +20,9 @@ import javax.persistence.Transient;
 @NamedQuery(name="userDetails.byName",query="from Userdetails where userName = ? ")
 @NamedQueries(value={@NamedQuery(name="userDetails.byID",query="from Userdetails where userId=?"),
 					@NamedQuery(name="userDetails",query="from Userdetails")})
+@NamedNativeQuery(name="native.userdetails",query="select * from User_DETAILS",resultClass=Userdetails.class)
+//native method is used to write sql query instead of hql and 
+//if resultclass is not used it will give classCastException
 public class Userdetails {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
