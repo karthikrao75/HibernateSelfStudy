@@ -1,0 +1,5 @@
+first level cache is a default caching that is provided by hibernate.
+
+first level cache is within the session scope 
+i.e these caching will go once the session is closed.
+
