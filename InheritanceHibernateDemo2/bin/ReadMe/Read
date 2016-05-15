@@ -1,0 +1,13 @@
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+
+this will create each table for each class
+
+Hibernate: insert into Vehicle (vehiclename, vehicleId) values (?, ?)
+Hibernate: insert into TwoWheeler (vehiclename, steeringhandle, vehicleId) values (?, ?, ?)
+Hibernate: insert into FourWheeler (vehiclename, steeringWheel, vehicleId) values (?, ?, ?)
+
+//it will create table for each entity class.
+//it will inherit all the instance variable from parent
+along with primary key generated using @Generated value.
+
+ 

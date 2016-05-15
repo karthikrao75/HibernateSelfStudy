@@ -1,0 +1,12 @@
+@Inheritance(strategy = InheritanceType.JOINED)
+
+Hibernate: insert into Vehicle (vehiclename, vehicleId) values (?, ?)
+Hibernate: insert into Vehicle (vehiclename, vehicleId) values (?, ?)
+Hibernate: insert into TwoWheeler (steeringhandle, vehicleId) values (?, ?)
+Hibernate: insert into Vehicle (vehiclename, vehicleId) values (?, ?)
+Hibernate: insert into FourWheeler (steeringWheel, vehicleId) values (?, ?)
+
+this will join parent and child class using parent class primary key
+
+only the child specific columns will be there in child table.
+ 
