@@ -3,5 +3,8 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate"/>
+	<classpathentry kind="lib" path="E:/jar files/ehcache-3.0.1.jar"/>
+	<classpathentry kind="lib" path="E:/jar files/hibernate-ehcache-4.3.5.Final.jar"/>
+	<classpathentry kind="lib" path="E:/jar files/slf4j-1.7.21/slf4j-api-1.7.21.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
